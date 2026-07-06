@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Aurelia Coffee — coffee shop premium dengan menu kopi eksklusif, promo menarik, dan pengalaman pelanggan modern." />
+    <meta name="theme-color" content="#0f0d0b" />
+    <title>Aurelia Coffee | Premium Coffee Experience</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <a class="brand" href="#home">
+          <span class="brand-mark">A</span>
+          <span>Aurelia Coffee</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#menu">Menu</a>
+          <a href="#testimonials">Testimoni</a>
+          <a href="#location">Lokasi</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="btn btn-small btn-ghost" id="theme-toggle">🌙</button>
+          <button class="btn btn-small btn-ghost" id="auth-toggle">Login</button>
+          <button class="btn btn-small btn-primary" id="cart-toggle">Cart <span id="cart-count">0</span></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="container hero">
+        <div class="reveal">
+          <div class="eyebrow">Premium Coffee House</div>
+          <h1>Rasakan espresso premium yang memikat setiap momen.</h1>
+          <p>Dari biji kopi pilihan hingga sentuhan barista profesional, Aurelia Coffee menghadirkan pengalaman ngopi yang elegan, hangat, dan tak terlupakan.</p>
+          <div class="hero-actions">
+            <a href="#menu" class="btn btn-primary">Lihat Menu</a>
+            <a href="#location" class="btn btn-ghost">Temukan Toko</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>4.9/5</strong><span>Rating pelanggan</span></div>
+            <div class="stat"><strong>15+</strong><span>Menu favorit</span></div>
+            <div class="stat"><strong>24/7</strong><span>Order support</span></div>
+          </div>
+        </div>
+        <div class="hero-card reveal">
+          <div class="eyebrow">Best Seller</div>
+          <h3>Signature Caramel Macchiato</h3>
+          <p>Espresso lembut, susu vanilla, dan karamel yang membentuk aroma klasik yang premium.</p>
+          <div class="price-row"><strong class="price">Rp 42.000</strong><button class="btn btn-primary" data-add-cart="caramel-macchiato">Tambah ke Cart</button></div>
+        </div>
+      </section>
+
+      <section class="container promo-banner reveal">
+        <div class="promo"><div class="pill">Promo Mingguan</div><h3>Diskon 20% untuk 3 pesanan pertama hari ini.</h3><p>Gunakan kode <strong>AURELIA20</strong> saat checkout dan nikmati voucher eksklusif.</p></div>
+        <div class="info-card"><h3>Member Benefit</h3><ul><li>Point setiap transaksi</li><li>Voucher bulanan</li><li>Prioritas pesanan</li></ul></div>
+      </section>
+
+      <section class="container section reveal" id="menu">
+        <div class="section-head"><div><h2>Menu Premium</h2><p>Cari minuman favoritmu dengan pencarian real-time dan filter kategori.</p></div></div>
+        <div class="toolbar">
+          <input class="search-box" id="search-box" type="text" placeholder="Cari menu..." />
+          <button class="filter-btn active" data-category="Semua">Semua</button>
+          <button class="filter-btn" data-category="Coffee">Coffee</button>
+          <button class="filter-btn" data-category="Tea">Tea</button>
+          <button class="filter-btn" data-category="Non Coffee">Non Coffee</button>
+          <button class="filter-btn" data-category="Smoothie">Smoothie</button>
+        </div>
+        <div class="menu-grid" id="menu-grid"></div>
+      </section>
+
+      <section class="container section reveal">
+        <div class="section-head"><div><h2>Favorit Pelanggan</h2><p>Menu yang paling sering dipilih dan direkomendasikan oleh pelanggan.</p></div></div>
+        <div class="favorites-grid" id="favorites-grid"></div>
+      </section>
+
+      <section class="container section reveal" id="dashboard">
+        <div class="section-head"><div><h2>Dashboard Pelanggan</h2><p>Pelacakan pesanan, status real-time, dan voucher tersedia di sini.</p></div></div>
+        <div class="dashboard-grid">
+          <div class="dashboard-card"><h3>Welcome Back</h3><p id="dashboard-text">Masuk untuk melihat riwayat pesanan dan status terbaru.</p><div class="stats"><div class="stat"><strong id="points-value">0</strong><span>Points</span></div><div class="stat"><strong id="orders-value">0</strong><span>Pesanan</span></div><div class="stat"><strong id="voucher-value">-</strong><span>Voucher</span></div></div></div>
+          <div class="dashboard-card"><h3>Status Pesanan</h3><ul><li>Order #AUR-1024 · Sedang disiapkan</li><li>Order #AUR-1008 · Dalam perjalanan</li><li>Order #AUR-0991 · Selesai</li></ul></div>
+        </div>
+      </section>
+
+      <section class="container section reveal" id="testimonials">
+        <div class="section-head"><div><h2>Testimoni Pelanggan</h2><p>Kenapa pelanggan kami kembali lagi untuk menikmati suasana premium.</p></div></div>
+        <div class="testimonial-grid"><article class="testimonial"><strong>“Rasa kopi yang sangat seimbang dan suasana yang nyaman.”</strong><p>— Rina, Jakarta</p></article><article class="testimonial"><strong>“Baristanya sangat profesional. Saya suka detail dan presentasinya.”</strong><p>— Dimas, Bandung</p></article><article class="testimonial"><strong>“Coffee shop premium yang terasa mewah namun tetap hangat.”</strong><p>— Lita, Surabaya</p></article></div>
+      </section>
+
+      <section class="container section reveal">
+        <div class="section-head"><div><h2>Galeri & Atmosfer</h2><p>Nuansa yang elegant, tenang, dan cocok untuk kerja maupun bersantai.</p></div></div>
+        <div class="gallery-grid"><article class="gallery-card"><div class="image"></div><div class="content"><h3>Interior Premium</h3><p>Desain hangat dengan pencahayaan lembut.</p></div></article><article class="gallery-card"><div class="image"></div><div class="content"><h3>Barista Corner</h3><p>Proses pembuatan kopi yang presisi dan estetis.</p></div></article><article class="gallery-card"><div class="image"></div><div class="content"><h3>Workspace Cozy</h3><p>Tempat nyaman untuk bekerja dan berkumpul.</p></div></article></div>
+      </section>
+
+      <section class="container section reveal" id="location">
+        <div class="section-head"><div><h2>Lokasi & Kontak</h2><p>Datang ke cabang terdekat atau hubungi kami langsung.</p></div></div>
+        <div class="location"><div class="info-card"><h3>Visit Us</h3><p>Jl. Mangkubumi No. 14, Jakarta Selatan</p><p>Open daily · 07:00 - 22:00</p><p>wa: +62 812 3456 7890</p><p>@aureliacoffee</p></div><iframe class="map-frame" title="Lokasi Aurelia Coffee" src="https://www.google.com/maps?q=Jakarta%20Selatan&output=embed"></iframe></div>
+      </section>
+
+      <section class="container section reveal" id="faq">
+        <div class="section-head"><div><h2>FAQ</h2><p>Jawaban singkat untuk pertanyaan pelanggan kami.</p></div></div>
+        <div class="faq-grid"><article class="faq-item open"><div class="question"><span>Apakah tersedia opsi non-kopi?</span><span>+</span></div><div class="answer">Tentu. Kami punya matcha, thai tea, taro milk tea, strawberry milk, dan smoothie.</div></article><article class="faq-item"><div class="question"><span>Bisakah memesan untuk dibawa pulang?</span><span>+</span></div><div class="answer">Ya. Semua menu tersedia untuk takeaway dan delivery dalam area tertentu.</div></article><article class="faq-item"><div class="question"><span>Apakah ada promo untuk member?</span><span>+</span></div><div class="answer">Ada voucher bulanan, point reward, dan promo musiman untuk member aktif.</div></article><article class="faq-item"><div class="question"><span>Bagaimana cara menghubungi support?</span><span>+</span></div><div class="answer">Anda bisa klik tombol WhatsApp atau gunakan live chat di website kami.</div></article></div>
+      </section>
+
+      <section class="container newsletter reveal"><div><h3>Berlangganan newsletter</h3><p>Dapatkan promo terbaru, resep, dan rekomendasi menu eksklusif.</p></div><form id="newsletter-form" class="form-grid" style="grid-template-columns: 1fr auto; gap: 0.6rem;"><input type="email" placeholder="Email Anda" required /><button class="btn btn-primary" type="submit">Langganan</button></form></section>
+    </main>
+
+    <aside class="cart-panel" id="cart-panel"><div class="section-head" style="margin-bottom: 0.4rem;"><div><h3 style="margin: 0;">Keranjang</h3><p style="margin: 0;">Pesanan Anda</p></div><button class="close-btn" id="close-cart">×</button></div><div id="cart-items"></div><div class="cart-actions"><strong id="cart-total">Total: Rp 0</strong><button class="btn btn-primary" id="checkout-btn">Checkout</button></div></aside>
+
+    <div class="modal" id="auth-modal"><div class="modal-card auth-card"><div class="modal-head"><h3>Login / Register</h3><button class="close-btn" data-close-modal="auth-modal">×</button></div><form id="auth-form" class="form-grid"><input type="email" placeholder="Email" required /><input type="password" placeholder="Password" required /><button class="btn btn-primary" type="submit">Masuk</button></form></div></div>
+    <div class="modal" id="checkout-modal"><div class="modal-card checkout-card"><div class="modal-head"><h3>Checkout Premium</h3><button class="close-btn" data-close-modal="checkout-modal">×</button></div><div class="form-grid"><input type="text" placeholder="Nama lengkap" required /><input type="text" placeholder="Alamat pengiriman" required /><select><option>Pilih metode pembayaran</option><option>QRIS</option><option>Transfer Bank</option><option>OVO</option></select><div class="payment-options"><span class="payment-option active">QRIS</span><span class="payment-option">Transfer</span><span class="payment-option">Cash</span></div><input type="text" placeholder="Kode voucher (opsional)" /><button class="btn btn-primary" id="confirm-order">Konfirmasi Pesanan</button></div></div></div>
+    <div class="modal" id="detail-modal"><div class="modal-card"><div class="modal-head"><h3 id="detail-title">Detail Produk</h3><button class="close-btn" data-close-modal="detail-modal">×</button></div><div id="detail-content"></div></div></div>
+
+    <button class="floating-btn" id="chat-toggle">💬</button>
+    <div class="chat-widget" id="chat-widget"><h3>Live Chat</h3><p>Halo! Ada yang bisa kami bantu?</p><div class="chat-bubble"><span class="dot"></span><span>Barista siap melayani Anda.</span></div><a class="btn btn-primary" href="https://wa.me/6281234567890" target="_blank" style="display: inline-block; margin-top: 0.7rem;">Hubungi WhatsApp</a></div>
+    <div class="toast" id="toast"></div>
+
+    <footer><div class="container footer-grid"><div><h3>Aurelia Coffee</h3><p>Premium coffee house dengan suasana elegan, menu eksklusif, dan service yang hangat.</p></div><div><h3>Jam Operasional</h3><p>Senin – Minggu</p><p>07:00 – 22:00</p></div><div><h3>Ikuti Kami</h3><p>Instagram · TikTok · Facebook</p><p>hello@aureliacoffee.com</p></div></div></footer>
+
+    <script src="jotham.js"></script>
+  </body>
+</html>
