@@ -146,3 +146,10 @@ tampilkan_pinjaman(pinjaman)
 
 st.subheader("👤 Rekap Per Peminjam")
 tampilkan_rekap(rekap_per_peminjam(pinjaman))
+pilihan_buku = st.selectbox(
+    "Pilih buku",
+    list(KATALOG_AWAL.keys()),
+    format_func=lambda kode: f"{kode} - {KATALOG_AWAL[kode]['judul']}"
+)
+
+kode = pilihan_buku
